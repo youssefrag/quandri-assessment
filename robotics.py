@@ -25,10 +25,19 @@ class Robot:
         input_element = driver.find_element_by_name('search')
 
         input_element.send_keys(text)
-        
-        driver.implicitly_wait(1000)
 
-        input_element.send_keys(Keys.ENTER)
+        driver.implicitly_wait(1000000000)
+
+        driver.find_element_by_name('search').send_keys(Keys.ENTER)
+
+        # for x in range(0, 3):
+
+        #     try:
+        #         driver.find_element_by_name('search').send_keys(Keys.ENTER)
+        #         break
+        #     except:
+        #         print('exception occured, trying again')
+
 
         first_search_result = driver.find_element_by_class_name('mw-search-result-ns-0')
 
