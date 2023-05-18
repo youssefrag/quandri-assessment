@@ -16,6 +16,9 @@ def navigate_to_wikipedia():
 def search_for_scientist(text):
     robot.get_scientist_page(text)
 
+def print_date_of_birth_death():
+    robot.get_birth_death_dates()
+
 def excuse_yourself():
     robot.say_goodbye()
 
@@ -24,6 +27,7 @@ def main():
     introduce_yourself()
     navigate_to_wikipedia()
     search_for_scientist("Albert Einstein")
+    print_date_of_birth_death()
 
 
 if __name__ == "__main__":
