@@ -67,7 +67,7 @@ class Robot:
 
         # birthdate_year = int(birthdate_text.split(" ")[2].split('\n')[0])
 
-        print(birthdate_year)
+        # print(birthdate_year)
 
         # print(dates[1].text)
 
@@ -77,8 +77,10 @@ class Robot:
 
         deathdate_year = int(deathdate_text.split(" ")[2])
 
-        print(deathdate_year)
+        # print(deathdate_year)
 
         age_at_death = deathdate_year - birthdate_year
 
-        print(age_at_death)
+        # print(age_at_death)
+
+        print(scientist + " was born in the year " + str(birthdate_year) + " and died in the year " + str(deathdate_year) + " at the age of " + str(age_at_death) + ".")

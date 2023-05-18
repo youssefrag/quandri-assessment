@@ -22,13 +22,15 @@ def print_date_of_birth_death(scientist):
 def excuse_yourself():
     robot.say_goodbye()
 
+def print_scientist_info(scientist):
+    navigate_to_wikipedia()
+    search_for_scientist(scientist)
+    print_date_of_birth_death(scientist)   
 
 def main():
     introduce_yourself()
 
-    navigate_to_wikipedia()
-    search_for_scientist("Charles Darwin")
-    print_date_of_birth_death("Charles Darwin")
+    print_scientist_info("Isaac Newton")
 
 
 if __name__ == "__main__":
