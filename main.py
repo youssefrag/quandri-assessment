@@ -23,14 +23,22 @@ def excuse_yourself():
     robot.say_goodbye()
 
 def print_scientist_info(scientist):
+
+    print('\n')
+    print('Scientist name: ' + scientist)
+    print('-------')
     navigate_to_wikipedia()
     search_for_scientist(scientist)
-    print_date_of_birth_death(scientist)   
+    print_date_of_birth_death(scientist)
+    print('-------') 
 
 def main():
     introduce_yourself()
 
-    print_scientist_info("Isaac Newton")
+    print_scientist_info("Albert Einstein")
+
+    # for item in SCIENTISTS:
+    #     print_scientist_info(item)
 
 
 if __name__ == "__main__":
