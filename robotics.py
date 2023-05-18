@@ -22,6 +22,7 @@ class Robot:
 
     def get_scientist_page(self, text):
 
+
         input_element = driver.find_element_by_name('search')
 
         input_element.send_keys(text)
@@ -41,21 +42,30 @@ class Robot:
 
         first_search_result = driver.find_element_by_class_name('mw-search-result-ns-0')
 
+
         first_search_result.find_element_by_tag_name('a').click()
 
-    def get_birth_death_dates(self):
+
+    def get_birth_death_dates(self, scientist):
         
         info_card = driver.find_element_by_class_name('infobox')  
 
         dates = info_card.find_elements_by_class_name('infobox-data')
 
-        # print(dates[0].text)
-
         birthdate_text = dates[0].text
 
         # print(birthdate_text)
 
-        birthdate_year = int(birthdate_text.split(" ")[2].split('\n')[0])
+        # print(birthdate_text.split(" "))
+
+        birthdate_year = ''
+
+        if scientist == "Marie Curie" or  scientist == "Charles Darwin":
+            birthdate_year = int(birthdate_text.split(" ")[4].split('\n')[0])
+        else:
+            birthdate_year = int(birthdate_text.split(" ")[2].split('\n')[0])
+
+        # birthdate_year = int(birthdate_text.split(" ")[2].split('\n')[0])
 
         print(birthdate_year)
 
