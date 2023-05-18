@@ -38,6 +38,28 @@ class Robot:
 
         dates = info_card.find_elements_by_class_name('infobox-data')
 
-        print(dates[0].text)
+        # print(dates[0].text)
 
-        print(dates[1].text)
+        birthdate_text = dates[0].text
+
+        # print(birthdate_text)
+
+        birthdate_year = int(birthdate_text.split(" ")[2].split('\n')[0])
+
+        print(birthdate_year)
+
+        # print(dates[1].text)
+
+        deathdate_text = dates[1].text
+
+        # print(deathdate_text)
+
+        deathdate_year = int(deathdate_text.split(" ")[2])
+
+        print(deathdate_year)
+
+        age_at_death = deathdate_year - birthdate_year
+
+        print(age_at_death)
+
+
