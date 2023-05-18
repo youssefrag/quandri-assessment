@@ -25,6 +25,8 @@ class Robot:
         input_element = driver.find_element_by_name('search')
 
         input_element.send_keys(text)
+        
+        driver.implicitly_wait(1000)
 
         input_element.send_keys(Keys.ENTER)
 
@@ -61,5 +63,3 @@ class Robot:
         age_at_death = deathdate_year - birthdate_year
 
         print(age_at_death)
-
-
