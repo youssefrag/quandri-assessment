@@ -14,7 +14,7 @@ def navigate_to_wikipedia():
     robot.open_webpage('https://en.wikipedia.org/wiki/Main_Page')
 
 def search_for_scientist(text):
-    robot.add_to_search_field(text)
+    robot.get_scientist_page(text)
 
 def excuse_yourself():
     robot.say_goodbye()
