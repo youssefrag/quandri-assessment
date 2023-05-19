@@ -13,6 +13,8 @@ from selenium import webdriver
 
 from webdriver_manager.chrome import ChromeDriverManager
 
+from selenium.common.exceptions import StaleElementReferenceException
+
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 class Robot:
@@ -35,8 +37,14 @@ class Robot:
         # input_element = driver.find_element_by_name('search')
 
         input_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "search")))
+        
+        try:
+            input_element.send_keys(text)
+        except StaleElementReferenceException:
+            input_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "search")))
+            input_element.send_keys(text)
 
-        input_element.send_keys(text)
+        
 
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "cdx-button"))
