@@ -40,6 +40,9 @@ def print_scientist_info(scientist):
 def main():
     introduce_yourself()
 
+    # print_scientist_info("Albert Einstein")
+    # print_scientist_info("Isaac Newton")
+    # print_scientist_info("Marie Curie")
     print_scientist_info("Charles Darwin")
 
     # for item in SCIENTISTS:

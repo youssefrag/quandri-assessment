@@ -1,7 +1,15 @@
 from RPA.Browser.Selenium import Selenium
 
 from selenium import webdriver
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from selenium.webdriver.common.keys import Keys
+
+from selenium.webdriver.common.by import By
+
+from selenium import webdriver
 
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -23,27 +31,33 @@ class Robot:
     def get_scientist_page(self, text):
 
 
+        # try:
         input_element = driver.find_element_by_name('search')
 
         input_element.send_keys(text)
 
-        driver.implicitly_wait(1000000000)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "cdx-button"))
+        ).click()
 
-        driver.find_element_by_name('search').send_keys(Keys.ENTER)
+        # WebDriverWait(driver, 10).until(
+        #     EC.presence_of_element_located((By.CLASS_NAME, "mw-search-result-ns-0"))
+        # ).click()
 
-        # while True:
-
-        #     try:
-        #         driver.find_element_by_name('search').send_keys(Keys.ENTER)
-        #         break
-        #     except:
-        #         print('exception occured, trying again')
-
-
-        first_search_result = driver.find_element_by_class_name('mw-search-result-ns-0')
+        # finally:
+        #     driver.quit()
 
 
-        first_search_result.find_element_by_tag_name('a').click()
+        # input_element = driver.find_element_by_name('search')
+
+        # input_element.send_keys(text)
+
+        # input_element.send_keys(Keys.ENTER)
+
+
+        # first_search_result = driver.find_element_by_class_name('mw-search-result-ns-0')
+
+        # first_search_result.find_element_by_tag_name('a').click()
 
 
     def get_birth_death_dates(self, scientist):
@@ -80,7 +94,7 @@ class Robot:
             first_paragraph = body_content.find_element_by_xpath("//p[3]")
 
             print(first_paragraph.text)
-            
+
         else:
 
             body_content = driver.find_element_by_id('mw-content-text')
