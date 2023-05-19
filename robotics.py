@@ -68,3 +68,14 @@ class Robot:
         age_at_death = deathdate_year - birthdate_year
 
         print(scientist + " was born in the year " + str(birthdate_year) + " and died in the year " + str(deathdate_year) + " at the age of " + str(age_at_death) + ".")
+
+
+    def get_scientist_summary(self, scientist):
+
+        body_content = driver.find_element_by_id('mw-content-text')
+
+        # print(body_content)
+
+        first_paragraph = body_content.find_element_by_xpath("//p[2]")
+
+        print(first_paragraph.text)

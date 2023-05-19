@@ -19,6 +19,9 @@ def search_for_scientist(text):
 def print_date_of_birth_death(scientist):
     robot.get_birth_death_dates(scientist)
 
+def print_summary(scientist):
+    robot.get_scientist_summary(scientist)
+
 def excuse_yourself():
     robot.say_goodbye()
 
@@ -31,7 +34,9 @@ def print_scientist_info(scientist):
     search_for_scientist(scientist)
     print_date_of_birth_death(scientist)
     print('-------') 
-
+    print('Summary:') 
+    print_summary(scientist)
+    print('\n')
 def main():
     introduce_yourself()
 
