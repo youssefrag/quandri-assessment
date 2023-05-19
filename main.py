@@ -1,4 +1,3 @@
-from turtle import clear
 from robotics import Robot
 
 
@@ -6,9 +5,12 @@ SCIENTISTS = ["Albert Einstein", "Isaac Newton", "Marie Curie", "Charles Darwin"
 
 robot = Robot("Quandrinaut")
 
-
 def introduce_yourself():
     robot.say_hello()
+    print('\n')
+    print('I am going to use Selenium RPA to navigate through Wikipedia and grap information about 4 different scientist.')
+    print('Their date of birth, death and age. And will also dispay a short summary')
+    print('Hope you find the provided information useful')
 
 def navigate_to_wikipedia():
     robot.open_webpage('https://en.wikipedia.org/wiki/Main_Page')
@@ -40,13 +42,8 @@ def print_scientist_info(scientist):
 def main():
     introduce_yourself()
 
-    print_scientist_info("Albert Einstein")
-    print_scientist_info("Isaac Newton")
-    print_scientist_info("Marie Curie")
-    print_scientist_info("Charles Darwin")
-
-    # for item in SCIENTISTS:
-    #     print_scientist_info(item)
+    for item in SCIENTISTS:
+        print_scientist_info(item)
 
     excuse_yourself()
 
