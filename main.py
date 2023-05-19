@@ -40,7 +40,7 @@ def print_scientist_info(scientist):
 def main():
     introduce_yourself()
 
-    print_scientist_info("Albert Einstein")
+    print_scientist_info("Isaac Newton")
 
     # for item in SCIENTISTS:
     #     print_scientist_info(item)
