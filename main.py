@@ -40,11 +40,12 @@ def print_scientist_info(scientist):
 def main():
     introduce_yourself()
 
-    print_scientist_info("Marie Curie")
+    print_scientist_info("Charles Darwin")
 
     # for item in SCIENTISTS:
     #     print_scientist_info(item)
 
+    excuse_yourself()
 
 if __name__ == "__main__":
     main()
