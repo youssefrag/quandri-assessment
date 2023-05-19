@@ -32,7 +32,9 @@ class Robot:
 
 
         # try:
-        input_element = driver.find_element_by_name('search')
+        # input_element = driver.find_element_by_name('search')
+
+        input_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "search")))
 
         input_element.send_keys(text)
 
