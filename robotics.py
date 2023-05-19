@@ -71,11 +71,19 @@ class Robot:
 
 
     def get_scientist_summary(self, scientist):
+        
+        if scientist == "Albert Einstein" or scientist == "Isaac Newton":
 
-        body_content = driver.find_element_by_id('mw-content-text')
+            body_content = driver.find_element_by_id('mw-content-text')
 
-        # print(body_content)
+            first_paragraph = body_content.find_element_by_xpath("//p[2]")
 
-        first_paragraph = body_content.find_element_by_xpath("//p[2]")
+            print(first_paragraph.text)
 
-        print(first_paragraph.text)
+        elif scientist == "Marie Curie":
+
+            body_content = driver.find_element_by_id('mw-content-text')
+
+            first_paragraph = body_content.find_element_by_xpath("//p[3]")
+
+            print(first_paragraph.text)
